@@ -5,6 +5,10 @@
 
 # Preface
 
-The chapter titles in these notes correspond with the chapters in the text
-(called "Lectures" in the text).  Even though they are labeled "Lecture 1"
-and so forth, they do not correspond to class periods.
+The chapter titles in these notes correspond with the chapter titles
+in the book
+[*Numerical Linear Algebra*](http://people.maths.ox.ac.uk/trefethen/text.html)
+by Trefethen and Bau, published by SIAM.  The sections below are
+labeled "Lectures" because the chapters in the book are labeled
+"Lectures", but they may not correspond with single class periods.
+
