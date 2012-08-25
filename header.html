@@ -1,0 +1,19 @@
+<meta name="viewport" content="width=device-width">
+
+<script src="http://aleph.sagemath.org/static/jquery.min.js"></script>
+<script src="http://aleph.sagemath.org/static/embedded_sagecell.js"></script>
+<script>
+$(function () {
+
+// For some reason, MathJax gets messed up if we don't put this timeout.
+// my guess is it has to do with us appending script tags to the end
+// the head element, but I don't know.
+setTimeout(function() {
+sagecell.loadMathJax=false;
+sagecell.makeSagecell({inputLocation: '.mysagecell-minimal', template: sagecell.templates.minimal});
+sagecell.makeSagecell({inputLocation: '.mysagecell'});
+}, 1000);
+
+//console.log(MathJax);
+});
+</script>

@@ -93,3 +93,14 @@ Text exercise 1.3
 <div class="exercise">
 Text exercise 1.4
 </div>
+
+
+Here's an experimental Sage cell:
+
+<div class="mysagecell"><script type="application/sage">
+@interact 
+def f(n=(0,1)):
+    print n
+</script>
+</div>
+
