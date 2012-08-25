@@ -84,7 +84,7 @@ Express $A\vec x$ as a linear combination of the columns of $A$.
 Express $AB$ as:
 
 #. a linear combination of columns of $A$
-#. a linear combinatino of rows of $B$.
+#. a linear combination of rows of $B$.
 #. dot products of rows of $A$ and columns of $B$.
 #. What if $B$ is a matrix of all ones?  What does $AB$ compute then?  What does $BA$ compute?
 
