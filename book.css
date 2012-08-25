@@ -1,0 +1,14 @@
+div.exercise { 
+    counter-increment: exercises;
+    border: 1px solid;
+    margin: 1em;
+    padding: 1em;
+}
+
+h1 { 
+    counter-reset: exercises; 
+}
+
+div.exercise:before {
+    content: "Exercise " counter(exercises) ". ";
+}
