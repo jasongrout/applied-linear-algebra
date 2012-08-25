@@ -13,3 +13,16 @@ div.exercise:before {
     content: "Exercise " counter(exercises) ". ";
     font-weight:bold;
 }
+
+div.definition {
+    margin: 1em;
+    padding: 1em;
+}
+div.definition:before {
+    content: "Definition. ";
+    font-weight:bold;
+}
+
+div.definition span.term {
+    font-style: italic;
+}
