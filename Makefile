@@ -15,7 +15,7 @@ xhtml: title.md classplans.md lecture1.md lecture2.md book.css header.html
 	pandoc -S -s  title.md classplans.md lecture*.md  -H header.html -t html --toc -c book.css --mathjax > output/xhtml/index.html
 	cp -a book.css output/xhtml/
 
-update: output/index.html
+update: xhtml
 	@echo $(BRANCH)
 	@echo dirty: $(DIRTY)
 	$(STASHSAVE)
