@@ -8,12 +8,12 @@ else
     STASHPOP=
 endif
 
-all: book
+all: xhtml
 
-book: title.md classplans.md lecture1.md lecture2.md book.css header.html
-	mkdir -p output
-	pandoc -s  title.md classplans.md lecture*.md  -H header.html -t html --toc -c book.css --mathjax > output/index.html
-	cp -a book.css output/
+xhtml: title.md classplans.md lecture1.md lecture2.md book.css header.html
+	mkdir -p output/xhtml
+	pandoc -S -s  title.md classplans.md lecture*.md  -H header.html -t html --toc -c book.css --mathjax > output/xhtml/index.html
+	cp -a book.css output/xhtml/
 
 update: output/index.html
 	@echo $(BRANCH)
@@ -21,7 +21,7 @@ update: output/index.html
 	$(STASHSAVE)
 	git stash
 	git checkout gh-pages
-	cp -r output/* .
+	cp -r output/xhtml/* .
 	# The - at the beginning tells Make to ignore an error exit status
 	# The line continuations make sure commit and push only happen if there are changes.
 	- ! git diff-index --quiet HEAD -- && \
@@ -29,5 +29,18 @@ update: output/index.html
 	git push origin gh-pages
 	git checkout $(BRANCH)
 	$(STASHPOP)
+
+latex:
+	mkdir -p output/latex
+	pandoc -S -s  title.md classplans.md lecture*.md  --no-highlight -t html --mathjax > output/latex/index.html
+	cp -r by-sa.pdf output/latex
+	xsltproc --novalid latex.xsl output/latex/index.html > output/latex/applied-linear-algebra.tex
+
+pdf: latex
+	mkdir -p output/pdf
+	cp output/latex/* output/pdf/
+	cd output/pdf; pdflatex applied-linear-algebra.tex; pdflatex applied-linear-algebra.tex; pdflatex applied-linear-algebra.tex
+	cp output/pdf/applied-linear-algebra.pdf output/xhtml/applied-linear-algebra.pdf
+
 clean:
 	rm -rf output

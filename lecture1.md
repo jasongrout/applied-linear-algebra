@@ -108,11 +108,14 @@ Text exercise 1.4
 
 
 Here's an experimental Sage cell:
+<div class="asagecell">
 
-<div class="mysagecell"><script type="application/sage">
-@interact 
-def f(n=(0,1)):
-    print n
-</script>
+```
+@interact
+def f(m=random_matrix(QQ,2)):
+   print m.rank()
+   if m.rank()==2:
+       print m^(-1)
+```
+
 </div>
-
