@@ -5,9 +5,10 @@ Class Plans
 27 Aug 2012
 -----------
 
-#. Highlights from Datta's motivational chapter.
+#. Some highlights of why studying applied, numerical linear algebra
+ is important.
 
-#. Small lecture on complex numbers.
+#. Complex numbers.
 
-#. Small lecture on Sage.
+#. Review of key concepts from linear algebra (see exercises).
 
