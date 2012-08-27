@@ -18,3 +18,4 @@ labeled "Lectures" because the chapters in the book are labeled
 An online version of these notes is available that includes some
 enhancements from [Sage](http://www.sagemath.org).
 
+**Make sure to read and understand each chapter as we cover it in class.**
