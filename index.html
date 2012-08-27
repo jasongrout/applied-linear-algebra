@@ -8,7 +8,7 @@
   <title>Applied Linear Algebra</title>
   <link rel="stylesheet" href="book.css" type="text/css" />
   <script src="https://d3eoax9i5htok0.cloudfront.net/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width"/>
   
   <script src="http://aleph.sagemath.org/static/jquery.min.js"></script>
   <script src="http://aleph.sagemath.org/static/embedded_sagecell.js"></script>
@@ -20,8 +20,7 @@
   // the head element, but I don't know.
   setTimeout(function() {
   sagecell.loadMathJax=false;
-  sagecell.makeSagecell({inputLocation: '.mysagecell-minimal', template: sagecell.templates.minimal});
-  sagecell.makeSagecell({inputLocation: '.mysagecell'});
+  sagecell.makeSagecell({inputLocation: '.asagecell'});
   }, 1000);
   
   //console.log(MathJax);
@@ -45,16 +44,21 @@
 </ul>
 </div>
 <h1 id="preface"><a href="#TOC">Preface</a></h1>
-<p>The chapter titles in these notes correspond with the chapter titles in the book <a href="http://people.maths.ox.ac.uk/trefethen/text.html"><em>Numerical Linear Algebra</em></a> by Trefethen and Bau, published by SIAM. The sections below are labeled &quot;Lectures&quot; because the chapters in the book are labeled &quot;Lectures&quot;, but they may not correspond with single class periods.</p>
+<p>The chapter titles in these notes correspond with the chapter titles in the book <a href="http://people.maths.ox.ac.uk/trefethen/text.html"><em>Numerical Linear Algebra</em></a> by Trefethen and Bau, published by SIAM. The sections below are labeled “Lectures” because the chapters in the book are labeled “Lectures”, but they may not correspond with single class periods.</p>
+<div class="html">
+A nicely typeset version of these notes is <a href="applied-linear-algebra.pdf">here</a>.
+</div>
+
+<p>An online version of these notes is available that includes some enhancements from <a href="http://www.sagemath.org">Sage</a>.</p>
 <h1 id="class-plans"><a href="#TOC">Class Plans</a></h1>
 <h2 id="aug-2012"><a href="#TOC">27 Aug 2012</a></h2>
 <ol>
-<li><p>Highlights from Datta's motivational chapter.</p></li>
+<li><p>Highlights from Datta’s motivational chapter.</p></li>
 <li><p>Small lecture on complex numbers.</p></li>
 <li><p>Small lecture on Sage.</p></li>
 </ol>
 <h1 id="lecture-1"><a href="#TOC">Lecture 1</a></h1>
-<p>This should primarily be a review of concepts from the first linear algebra class, though there are probably examples you haven't seen before.</p>
+<p>This should primarily be a review of concepts from the first linear algebra class, though there are probably examples you haven’t seen before.</p>
 <p>Practice interpreting the index notation, like in equation 1.1.</p>
 <div class="definition"> 
 The <span class="term">span</span> of some vectors is the set of all linear combinations of the vectors. A set of vectors is <span class="term">linearly independent</span> if none of the vectors can be written as a linear combination of the others. A <span class="term">vector space</span> is the span of some vectors. A <span class="term">basis</span> for a vector space is a linearly independent set of vectors that spans the space. The <span
@@ -150,14 +154,15 @@ Text exercise 1.4
 </div>
 
 
-<p>Here's an experimental Sage cell:</p>
-<div class="mysagecell"><script type="application/sage">
-@interact 
-def f(n=(0,1)):
-    print n
-</script>
-</div>
+Here’s an experimental Sage cell:
+<div class="asagecell">
 
+<pre><code>@interact
+def f(m=random_matrix(QQ,2)):
+   print m.rank()
+   if m.rank()==2:
+       print m^(-1)</code></pre>
+</div>
 
 <h1 id="lecture-2"><a href="#TOC">Lecture 2</a></h1>
 <div class="exercise">
