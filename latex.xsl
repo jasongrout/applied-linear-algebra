@@ -149,10 +149,10 @@ exclude-result-prefixes="x">
   <xsl:apply-templates/>
   <xsl:text>''</xsl:text>
 </xsl:template>
-<xsl:template match="x:div[@class='definition']/x:span[@class='term']">
-  <xsl:text>\begin{emph}</xsl:text>
+<xsl:template match="x:div[@class='definition']//x:span[@class='term']">
+  <xsl:text>\emph{</xsl:text>
   <xsl:apply-templates/>
-  <xsl:text>\end{emph}</xsl:text>
+  <xsl:text>}</xsl:text>
 </xsl:template>
 
 
