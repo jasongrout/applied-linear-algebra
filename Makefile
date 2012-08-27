@@ -15,7 +15,11 @@ xhtml: title.md classplans.md lecture1.md lecture2.md book.css header.html
 	pandoc -S -s  title.md classplans.md lecture1.md  -H header.html -t html --toc -c book.css --mathjax > output/xhtml/index.html
 	cp -a book.css output/xhtml/
 
-update: xhtml
+update-sage: xhtml pdf
+	scp -r output/xhtml/* sage.math:applied-linear-algebra/
+	scp output/pdf/applied-linear-algebra.pdf sage.math:applied-linear-algebra/
+
+update: xhtml update-sage
 	@echo $(BRANCH)
 	@echo dirty: $(DIRTY)
 	$(STASHSAVE)
@@ -41,7 +45,7 @@ latex:
 pdf: latex
 	mkdir -p output/pdf
 	cp output/latex/* output/pdf/
-	cd output/pdf; pdflatex applied-linear-algebra.tex; pdflatex applied-linear-algebra.tex; pdflatex applied-linear-algebra.tex
+	-cd output/pdf; pdflatex applied-linear-algebra.tex; pdflatex applied-linear-algebra.tex; pdflatex applied-linear-algebra.tex
 	cp output/pdf/applied-linear-algebra.pdf output/xhtml/applied-linear-algebra.pdf
 
 clean:
