@@ -8,11 +8,13 @@ else
     STASHPOP=
 endif
 
+MD_FILES = title.md classplans.md lecture1.md lecture2.md
+
 all: xhtml
 
-xhtml: title.md classplans.md lecture1.md lecture2.md book.css header.html
+xhtml: $(MD_FILES) book.css header.html
 	mkdir -p output/xhtml
-	pandoc -S -s  title.md classplans.md lecture1.md  -H header.html -t html --toc -c book.css --mathjax > output/xhtml/index.html
+	pandoc -S -s  $(MD_FILES)  -H header.html -t html --toc -c book.css --mathjax > output/xhtml/index.html
 	cp -a book.css output/xhtml/
 
 update-sage: xhtml pdf
