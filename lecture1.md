@@ -180,7 +180,7 @@ $P_3$ is the vector space of polynomials with degree at most 3.  Let $T\colon P_
 
 ```
 v=vector([3,1,-2,5])
-  1.fill in A
+#fill in A
 A=matrix(QQ, [[],[],[]])
 A*v # should be (-5,3,7), according to our example above.
 ```
