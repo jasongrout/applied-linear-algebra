@@ -88,6 +88,23 @@ vector space to another that:
 Find the matrix $A$ for the linear transformation $T((a,b)) = (2a-3b, 5a)$ so that $T(\vec x)=A\vec x$.
 </div>
 
+
+You can check your work with Sage (and also see how Sage creates
+vectors and matrices) by playing with the example below.  Go ahead and
+change the matrix to your matrix.
+
+<div class="asagecell">
+
+```
+var('a,b')
+v=vector([a,b])
+A=matrix(QQ,[[1,2],[3,4]])
+print A
+print A*v
+```
+
+</div>
+
 When you get to this point, ask me to help you draw a diagram
 connecting the column space and null space of a matrix $A$ and the
 linear transformation $T(\vec x)=A\vec x$.
@@ -119,6 +136,19 @@ e. What is the matrix $A$ representing $T$, so that $T(\vec x)=A\vec x$?
 
 </div>
 
+Check your work to the above exercise by modifying $A$ and $\vec v$
+below and confirming your answers in the first parts of the problem.
+
+<div class="asagecell">
+
+```
+v=vector([1,2])
+A=matrix(QQ,[[1,2],[3,4]])
+print A*v
+```
+
+</div>
+
 <div class="definition"> A <span class="term">coordinate vector</span>
 $[\vec v]_\mathcal{B}$ relative to an ordered basis $\mathcal{B}$ is a
 vector of coefficients of the linear combination of basis elements
@@ -146,6 +176,17 @@ multiplying a matrix and a coordinate vector.
 $P_3$ is the vector space of polynomials with degree at most 3.  Let $T\colon P_3\to\mathbb{R}^3$ be the linear transformation $T(p)=(p(x=-1), p(x=0), p(x=1))$ (i.e., evaluate $p$ at $x=-1$, $x=0$, and $x=1$).  For example, $T(3+x-2x^2+5x^3)=(3-1-2-5, 3, 3+1-2+5)=(-5,3,7)$.  Let $\mathcal{B}=\{1,x,x^2,x^3\}$ be a basis for $P_3$.  Find a matrix representing $T$ relative to $\mathcal{B}$ and the standard basis on $\mathbb{R}^3$.
 </div>
 
+<div class="asagecell">
+
+```
+v=vector([3,1,-2,5])
+  1.fill in A
+A=matrix(QQ, [[],[],[]])
+A*v # should be (-5,3,7), according to our example above.
+```
+
+</div>
+
 <div class="exercise">
 Write $A\begin{pmatrix} 1\\2\\3\end{pmatrix}$ as a linear combination of the columns of $A$.
 </div>
@@ -159,7 +200,21 @@ Express $AB$ as:
 #. What if $B$ is a matrix of all ones?  What does $AB$ compute then?  What does $BA$ compute?
 
 </div>
-    
+Check your answer to the last part of the question above about an
+all-ones matrix.
+
+<div class="asagecell">
+
+```
+A=random_matrix(QQ, 3);
+B=ones_matrix(QQ,3)
+print A
+print
+print A*B
+```
+
+</div>
+
     
     
 <div class="exercise">
