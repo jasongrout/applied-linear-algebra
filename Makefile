@@ -37,9 +37,9 @@ update: xhtml update-sage
 	$(STASHPOP)
 	scp output/pdf/applied-linear-algebra.pdf sage.math:
 
-latex:
+latex: $(MD_FILES)
 	mkdir -p output/latex
-	pandoc -S -s  title.md classplans.md lecture1.md  --no-highlight -t html --mathjax > output/latex/index.html
+	pandoc -S -s  $(MD_FILES)  --no-highlight -t html --mathjax > output/latex/index.html
 	cp -r by-sa.pdf output/latex
 	xsltproc --novalid latex.xsl output/latex/index.html > output/latex/applied-linear-algebra-xsl.tex
 	cat output/latex/applied-linear-algebra-xsl.tex| sed "s/&amp;/\&/g" > output/latex/applied-linear-algebra.tex

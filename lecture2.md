@@ -4,27 +4,32 @@ The set of complex numbers is denoted $\mathbb{C}$.  The conjugate of the comple
 
 ## In-class activities
 
-<div class="exercise">
 <!-- Needed for Text Exercise 2.3 -->
+<div class="exercise">
 Show that if $z\bar z = z^2$, then $z$ must be a real number (i.e.,
 the imaginary part of $z$ is 0).
 </div>
 
 <div class="exercise">
+
 #. Let $A=\begin{bmatrix}4&4+i&2+i\\1-i&2-i&5\end{bmatrix}$.  What is
    $A^*$?  Is $A$ hermitian?
 #. Let $B=\begin{bmatrix}2&4+2i\\4-2i&5\end{bmatrix}$.  What is
    $B^*$?  Is $B$ hermitian?
+
 </div>
 
 <div class="exercise">
+
 #. What must be true about diagonal entries of hermitian matrices?
 #. Prove that $AA^*$ is always hermitian.
+
 </div>
 
 <div class="asagecell">
 
 ```
+
 # Use CDF for complex matrices
 A=matrix(CDF, [[4,4+I,2+I],[1-I,2-I,5]])
 print A.H # this is A^*
@@ -46,15 +51,19 @@ as the (2,1) element of $B^*A^*$.
 </div>
 
 <div class="exercise">
+
 #. Prove that $(AB)^{-1}=B^{-1}A^{-1}$.
 #. Prove that $(A^*)^{-1}=(A^{-1})^*$.
+
 </div>
 
 <div class="exercise">
+
 #. What is the angle between $(1,2)$ and $(2,-1)$?  Are these vectors
 orthogonal? [Hint: use equation (2.3) for the first question.]
 #. Is the set $\{(1/\sqrt{2}, i/\sqrt{2}), (1+i,-1)\}$ orthonormal? Is
 it linearly independent?  Remember that now, scalars can be complex numbers.
+
 </div>
 
 <div class="exercise">

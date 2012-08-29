@@ -14,6 +14,9 @@ exclude-result-prefixes="x">
   </xsl:copy>
 </xsl:template>
 
+<xsl:template match="comment()">
+</xsl:template>
+
 <xsl:template match="x:div[@class='mysagecell']">
 </xsl:template>
 
