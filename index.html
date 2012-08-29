@@ -243,28 +243,31 @@ Text exercise 1.4
 <h1 id="draft-lecture-2-orthogonal-vectors-and-matrices"><a href="#TOC">(DRAFT) Lecture 2: Orthogonal Vectors and Matrices</a></h1>
 <p>The set of complex numbers is denoted \(\mathbb{C}\). The conjugate of the complex number \(z=a+bi\) is \(\bar z = a-bi\).</p>
 <h2 id="in-class-activities"><a href="#TOC">In-class activities</a></h2>
-<div class="exercise">
 <!-- Needed for Text Exercise 2.3 -->
+<div class="exercise">
 Show that if \(z\bar z = z^2\), then \(z\) must be a real number (i.e., the imaginary part of \(z\) is 0).
 </div>
 
 <div class="exercise">
+
 <ol>
 <li>Let \(A=\begin{bmatrix}4&amp;4+i&amp;2+i\\1-i&amp;2-i&amp;5\end{bmatrix}\). What is \(A^*\)? Is \(A\) hermitian?</li>
-<li>Let \(B=\begin{bmatrix}2&amp;4+2i\\4-2i&amp;5\end{bmatrix}\). What is \(B^*\)? Is \(B\) hermitian?
-</div>
-</li>
+<li>Let \(B=\begin{bmatrix}2&amp;4+2i\\4-2i&amp;5\end{bmatrix}\). What is \(B^*\)? Is \(B\) hermitian?</li>
 </ol>
+</div>
+
 <div class="exercise">
+
 <ol>
 <li>What must be true about diagonal entries of hermitian matrices?</li>
-<li>Prove that \(AA^*\) is always hermitian.
-</div>
-</li>
+<li>Prove that \(AA^*\) is always hermitian.</li>
 </ol>
+</div>
+
 <div class="asagecell">
 
-<pre><code># Use CDF for complex matrices
+<pre><code>
+# Use CDF for complex matrices
 A=matrix(CDF, [[4,4+I,2+I],[1-I,2-I,5]])
 print A.H # this is A^*
 print A.is_hermitian()
@@ -280,19 +283,21 @@ Give an example showing that the (2,1) element of \((AB)^*\) is the same as the 
 </div>
 
 <div class="exercise">
+
 <ol>
 <li>Prove that \((AB)^{-1}=B^{-1}A^{-1}\).</li>
-<li>Prove that \((A^*)^{-1}=(A^{-1})^*\).
-</div>
-</li>
+<li>Prove that \((A^*)^{-1}=(A^{-1})^*\).</li>
 </ol>
+</div>
+
 <div class="exercise">
+
 <ol>
 <li>What is the angle between \((1,2)\) and \((2,-1)\)? Are these vectors orthogonal? [Hint: use equation (2.3) for the first question.]</li>
-<li>Is the set \(\{(1/\sqrt{2}, i/\sqrt{2}), (1+i,-1)\}\) orthonormal? Is it linearly independent? Remember that now, scalars can be complex numbers.
-</div>
-</li>
+<li>Is the set \(\{(1/\sqrt{2}, i/\sqrt{2}), (1+i,-1)\}\) orthonormal? Is it linearly independent? Remember that now, scalars can be complex numbers.</li>
 </ol>
+</div>
+
 <div class="exercise">
 Give the reasons why the second equality in equation (2.7) in the text is true.
 </div>
