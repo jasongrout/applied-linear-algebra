@@ -31,3 +31,15 @@ div.definition:before {
 div.definition span.term {
     font-style: italic;
 }
+
+.collapsible .body {
+    display: none; /* an initial style */
+}
+
+.collapsible .title {
+    background-color: #A4D4FA;
+}
+
+.collapsible .title:after {
+    content: " (click to toggle)";
+}

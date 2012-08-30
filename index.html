@@ -25,6 +25,13 @@
   //console.log(MathJax);
   });
   </script>
+  <script>
+  $(function() {
+  $(document).on("click", '.collapsible .title', function(e) {
+  var body = $(e.target.parentElement).find('.body').slideToggle("fast").find('.CodeMirror').each(function(i, e) {e.CodeMirror.refresh()});
+  });
+  });
+  </script>
 </head>
 <body>
 <div id="header">
@@ -63,7 +70,7 @@ A nicely typeset version of these notes is <a href="http://sage.math.washington.
 <li>Calculating a determinant is both impossibly hard and numerically bad when using cofactor expansion. Instead, use LU decomposition or similar</li>
 <li>Calculating eigenvalues using the characteristic polynomial is bad, since it involves both a determinant and polynomial root-finding (numerically unstable). See <a href="http://en.wikipedia.org/wiki/Wilkinson's_polynomial">Wilkinson’s polynomial</a>.</li>
 </ul>
-<div class="asagecell">
+<div class="collapsible"><div class="title">Sage Cell</div><div class="body"><div class="asagecell">
 wilkinson = prod((x-i) for i in [1..20]).polynomial(QQ)
 x=wilkinson.variables()[0]
 eps=2^-31
@@ -85,7 +92,7 @@ def _(precision=slider(40,100,1,default=53), coefficient=slider([c-eps..c-eps/20
     html("Changing the $x^{19}$ term from $-210x^{19}$ to $%sx^{19}$ gives the following differences in roots"%R(coefficient))
 
     html.table(rootlist, header=["Original root", "Perturbed root", "Distance"])
-</div></li>
+</div></div></div></li>
 <li><p>Review of key concepts from linear algebra (see exercises).</p></li>
 </ol>
 <h2 id="aug-2012-1"><a href="#TOC">29 Aug 2012</a></h2>
