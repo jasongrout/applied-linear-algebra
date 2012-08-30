@@ -26,10 +26,9 @@ the imaginary part of $z$ is 0).
 
 </div>
 
-<div class="asagecell">
+<sagecell>
 
 ```
-
 # Use CDF for complex matrices
 A=matrix(CDF, [[4,4+I,2+I],[1-I,2-I,5]])
 print A.H # this is A^*
@@ -37,7 +36,7 @@ print A.is_hermitian()
 print A.H==A
 ```
 
-</div>
+</sagecell>
 
 <div class="exercise">
 Give an example showing that the inner product on $\mathbb{C}^2$ is
@@ -77,7 +76,7 @@ decompositions of $v$ given in equation (2.7).
 
 <!-- http://forums.xkcd.com/viewtopic.php?f=17&t=64287 gives several -->
 <!-- nice ways to get nice orthogonal matrices -->
-<div class="asagecell">
+<sagecell>
 
 ```
 A=matrix(RDF, [[1,4,3],[2,3,6],[-1,-4,3]])
@@ -96,7 +95,7 @@ q1=vector(QQ,[1,2,2])/3
 
 ```
 
-</div>
+</sagecell>
 
 <div class="exercise">
 Text exercise 2.1

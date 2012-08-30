@@ -10,11 +10,14 @@ endif
 
 MD_FILES = title.md classplans.md lecture1.md lecture2.md
 
+
+
 all: xhtml
 
 xhtml: $(MD_FILES) book.css header.html
 	mkdir -p output/xhtml
-	pandoc -S -s  $(MD_FILES)  -H header.html -t html --toc -c book.css --mathjax > output/xhtml/index.html
+	pandoc -S -s  $(MD_FILES)  -H header.html -t html --toc -c book.css --mathjax \
+	| xsltproc --novalid xhtml.xsl - > output/xhtml/index.html
 	cp -a book.css output/xhtml/
 
 update-sage: xhtml pdf
@@ -39,9 +42,9 @@ update: xhtml update-sage
 
 latex: $(MD_FILES)
 	mkdir -p output/latex
-	pandoc -S -s  $(MD_FILES)  --no-highlight -t html --mathjax > output/latex/index.html
 	cp -r by-sa.pdf output/latex
-	xsltproc --novalid latex.xsl output/latex/index.html > output/latex/applied-linear-algebra-xsl.tex
+	pandoc -S -s  $(MD_FILES)  --no-highlight -t html --mathjax \
+	| xsltproc --novalid latex.xsl - > output/latex/applied-linear-algebra-xsl.tex
 	cat output/latex/applied-linear-algebra-xsl.tex| sed "s/&amp;/\&/g" > output/latex/applied-linear-algebra.tex
 
 pdf: latex

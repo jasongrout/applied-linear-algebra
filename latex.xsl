@@ -7,6 +7,8 @@ exclude-result-prefixes="x">
 
 <xsl:output method="html" omit-xml-declaration="yes" />
 
+<!-- Parts of this stylesheet came from
+http://www.w3.org/2004/04/xhlt91/ -->
 <!-- By default, copy *everything* -->
 <xsl:template match="@*|node()">
   <xsl:copy>
@@ -15,9 +17,6 @@ exclude-result-prefixes="x">
 </xsl:template>
 
 <xsl:template match="comment()">
-</xsl:template>
-
-<xsl:template match="x:div[@class='mysagecell']">
 </xsl:template>
 
 <xsl:template match="x:body">
@@ -31,6 +30,7 @@ exclude-result-prefixes="x">
 <xsl:template match="x:head">
 </xsl:template>
 
+<xsl:include href="base.xsl" />
 <xsl:include href="header.tex" />
 <xsl:template match="x:html">
 <xsl:call-template name="preamble"/>
@@ -115,11 +115,12 @@ exclude-result-prefixes="x">
 
 <!-- misc pre/verbatim -->
 <xsl:template match="x:pre[x:code]">
-  <xsl:text>\begin{lstlisting}</xsl:text>
+  <xsl:text>\begin{lstlisting}
+</xsl:text>
   <xsl:apply-templates mode="verbatim"/>
   <xsl:text>\end{lstlisting}</xsl:text>
 </xsl:template>
-<xsl:template match="x:em">
+<xsl:template match="x:em|x:strong">
   <xsl:text>{\em </xsl:text>
   <xsl:apply-templates/>
   <xsl:text>}</xsl:text>
@@ -163,12 +164,22 @@ exclude-result-prefixes="x">
   <xsl:text>\href{</xsl:text><xsl:value-of select="@href"/>}{<xsl:apply-templates/><xsl:text>}</xsl:text>
 </xsl:template>
 <xsl:template match="x:div[@class='asagecell']">
-  <xsl:apply-templates/>
+  <xsl:text>\begin{lstlisting}</xsl:text>
+  <xsl:apply-templates mode="verbatim"/>
+  <xsl:text>\end{lstlisting}</xsl:text>
 </xsl:template>
 
 
-<!--       per latex tutorial, the following need escaping: # $ % & ~ _ ^ \ { }
+<!--       per latex tutorial, the following need escaping: # $ % & ~
+     _ ^ \ { } -->
 
+<xsl:template match="text()">
+  <xsl:call-template name="esc">
+    <xsl:with-param name="c">%</xsl:with-param>
+    <xsl:with-param name="s" select="."/>
+  </xsl:call-template>
+</xsl:template>
+<!--
 <xsl:template match="text()">
   <xsl:call-template name="esc">
     <xsl:with-param name="c">#</xsl:with-param>
@@ -220,6 +231,7 @@ exclude-result-prefixes="x">
     </xsl:with-param>
   </xsl:call-template>
 </xsl:template>
+-->
 
 <xsl:template name="esc">
   <xsl:param name="s"/>
@@ -246,7 +258,6 @@ exclude-result-prefixes="x">
     </xsl:otherwise>
   </xsl:choose>
 </xsl:template>
--->
 
 
 

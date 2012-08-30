@@ -51,10 +51,10 @@ bases and the dimension of the vector space.
   #. $\{c_1(-1,0,1)+c_2(2,1,2)+c_3(-4,-1,0) \mid
   c_1,c_2,c_3\in\mathbb{R}\}$: all linear combinations of $(-1,0,1)$,
   $(2,1,2)$, and $(-4,-1,0)$.  Hint: Since the third vector $(-4,-1,0)$ is actually a linear combination of $(-1,0,1)$ and $(2,1,2)$, $(-4,-1,0)=2(-1,0,1)-(2,1,2)$, any linear combination of the three vectors can actually be written as a linear combination of just the first two vectors.  For example, 
-$$\begin{align*}
+\begin{align*}
 3(-1,0,1)-2(2,1,2)+2(-4,-1,0)&=3(-1,0,1)-2(2,1,2)+2(2(-1,0,1)-(2,1,2))\\
 &=7(-1,0,1)-4(2,1,2).
-\end{align*}$$
+\end{align*}
   #. The set of all polynomials with degree at most 3.
   #. The set of all polynomials with degree equal to 3.
   #. The set of all polynomials.
@@ -93,7 +93,7 @@ You can check your work with Sage (and also see how Sage creates
 vectors and matrices) by playing with the example below.  Go ahead and
 change the matrix to your matrix.
 
-<div class="asagecell">
+<sagecell>
 
 ```
 var('a,b')
@@ -103,7 +103,7 @@ print A
 print A*v
 ```
 
-</div>
+</sagecell>
 
 When you get to this point, ask me to help you draw a diagram
 connecting the column space and null space of a matrix $A$ and the
@@ -139,7 +139,7 @@ e. What is the matrix $A$ representing $T$, so that $T(\vec x)=A\vec x$?
 Check your work to the above exercise by modifying $A$ and $\vec v$
 below and confirming your answers in the first parts of the problem.
 
-<div class="asagecell">
+<sagecell>
 
 ```
 v=vector([1,2])
@@ -147,7 +147,7 @@ A=matrix(QQ,[[1,2],[3,4]])
 print A*v
 ```
 
-</div>
+</sagecell>
 
 <div class="definition"> A <span class="term">coordinate vector</span>
 $[\vec v]_\mathcal{B}$ relative to an ordered basis $\mathcal{B}$ is a
@@ -176,7 +176,7 @@ multiplying a matrix and a coordinate vector.
 $P_3$ is the vector space of polynomials with degree at most 3.  Let $T\colon P_3\to\mathbb{R}^3$ be the linear transformation $T(p)=(p(x=-1), p(x=0), p(x=1))$ (i.e., evaluate $p$ at $x=-1$, $x=0$, and $x=1$).  For example, $T(3+x-2x^2+5x^3)=(3-1-2-5, 3, 3+1-2+5)=(-5,3,7)$.  Let $\mathcal{B}=\{1,x,x^2,x^3\}$ be a basis for $P_3$.  Find a matrix representing $T$ relative to $\mathcal{B}$ and the standard basis on $\mathbb{R}^3$.
 </div>
 
-<div class="asagecell">
+<sagecell>
 
 ```
 v=vector([3,1,-2,5])
@@ -185,7 +185,7 @@ A=matrix(QQ, [[],[],[]])
 A*v # should be (-5,3,7), according to our example above.
 ```
 
-</div>
+</sagecell>
 
 <div class="exercise">
 Write $A\begin{pmatrix} 1\\2\\3\end{pmatrix}$ as a linear combination of the columns of $A$.
@@ -203,7 +203,7 @@ Express $AB$ as:
 Check your answer to the last part of the question above about an
 all-ones matrix.
 
-<div class="asagecell">
+<sagecell>
 
 ```
 A=random_matrix(QQ, 3);
@@ -213,7 +213,7 @@ print
 print A*B
 ```
 
-</div>
+</sagecell>
 
     
     
