@@ -16,6 +16,10 @@ exclude-result-prefixes="x">
 <xsl:template match="comment()">
 </xsl:template>
 
+<xsl:template match="x:sagecell[@collapsed]">
+  <div class="collapsible"><div class="title">Sage Cell</div><div class="body"><div class="asagecell"><xsl:apply-templates/></div></div></div>
+</xsl:template>
+
 <xsl:template match="x:sagecell">
   <div class="asagecell"><xsl:apply-templates/></div>
 </xsl:template>

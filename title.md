@@ -39,7 +39,7 @@ Class Plans
       root-finding (numerically unstable).  See
       [Wilkinson's polynomial](http://en.wikipedia.org/wiki/Wilkinson's_polynomial).
 
-    <sagecell>
+    <sagecell collapsed="collapsed">
 
     ```
     wilkinson = prod((x-i) for i in [1..20]).polynomial(QQ)

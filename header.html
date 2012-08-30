@@ -16,3 +16,10 @@ sagecell.makeSagecell({inputLocation: '.asagecell'});
 //console.log(MathJax);
 });
 </script>
+<script>
+$(function() {
+$(document).on("click", '.collapsible .title', function(e) {
+var body = $(e.target.parentElement).find('.body').slideToggle("fast").find('.CodeMirror').each(function(i, e) {e.CodeMirror.refresh()});
+});
+});
+</script>
