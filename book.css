@@ -5,12 +5,17 @@ div.exercise {
     padding: 1em;
 }
 
+div.mainmatter {
+    counter-reset: chapter;
+}
+
 h1 { 
-    counter-reset: exercises; 
+    counter-reset: exercises;
+    counter-increment: chapter;
 }
 
 div.exercise:before {
-    content: "Exercise " counter(exercises) ". ";
+    content: "Exercise " counter(chapter) "." counter(exercises) ". ";
     font-weight:bold;
 }
 
