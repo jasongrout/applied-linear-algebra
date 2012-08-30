@@ -135,10 +135,10 @@ http://www.w3.org/2004/04/xhlt91/ -->
 </xsl:template>
 <!-- paragraphs -->
 <xsl:template match="x:p">
-  <xsl:text></xsl:text>
-  <xsl:text> \par </xsl:text>
   <xsl:apply-templates/>
-  <xsl:text> \par </xsl:text>
+  <xsl:text>
+
+</xsl:text>
 </xsl:template>
 <xsl:template match="x:p[@class='nopar']">
   <xsl:text>\empty</xsl:text>
