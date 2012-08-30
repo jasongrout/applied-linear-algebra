@@ -28,4 +28,9 @@ exclude-result-prefixes="x">
   <div class="frontmatter"><xsl:apply-templates/></div>
 </xsl:template>
 
+<xsl:template match="x:mainmatter">
+  <div class="mainmatter"><xsl:apply-templates/></div>
+</xsl:template>
+
+
 </xsl:stylesheet>
