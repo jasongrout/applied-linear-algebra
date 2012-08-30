@@ -22,15 +22,15 @@ http://www.w3.org/2004/04/xhlt91/ -->
 <xsl:template match="x:body">
   \begin{document}
   <xsl:call-template name="frontmatter"/>
+  <xsl:apply-templates select="x:frontmatter/*"/>
   \mainmatter
-  <xsl:apply-templates/>
+  <xsl:apply-templates select="x:mainmatter/*"/>
   \end{document}
 </xsl:template>
 
 <xsl:template match="x:head">
 </xsl:template>
 
-<xsl:include href="base.xsl" />
 <xsl:include href="header.tex" />
 <xsl:template match="x:html">
 <xsl:call-template name="preamble"/>
@@ -54,11 +54,17 @@ http://www.w3.org/2004/04/xhlt91/ -->
 </xsl:template>
 
 <!-- body sections -->
-<xsl:template match="x:h1">
+<xsl:template match="x:frontmatter/x:h1">
   <xsl:text>\chapter*{</xsl:text>
   <xsl:apply-templates/>
   <xsl:text>}</xsl:text>
   \addcontentsline{toc}{chapter}{<xsl:apply-templates/>}
+  <xsl:call-template name="section-label"/>
+</xsl:template>
+<xsl:template match="x:h1">
+  <xsl:text>\chapter{</xsl:text>
+  <xsl:apply-templates/>
+  <xsl:text>}</xsl:text>
   <xsl:call-template name="section-label"/>
 </xsl:template>
 <xsl:template match="x:h2">
@@ -114,12 +120,14 @@ http://www.w3.org/2004/04/xhlt91/ -->
 </xsl:template>
 
 <!-- misc pre/verbatim -->
+<!--
 <xsl:template match="x:pre[x:code]">
   <xsl:text>\begin{lstlisting}
 </xsl:text>
   <xsl:apply-templates mode="verbatim"/>
   <xsl:text>\end{lstlisting}</xsl:text>
 </xsl:template>
+-->
 <xsl:template match="x:em|x:strong">
   <xsl:text>{\em </xsl:text>
   <xsl:apply-templates/>
@@ -163,10 +171,18 @@ http://www.w3.org/2004/04/xhlt91/ -->
 <xsl:template match="x:a[@href]">
   <xsl:text>\href{</xsl:text><xsl:value-of select="@href"/>}{<xsl:apply-templates/><xsl:text>}</xsl:text>
 </xsl:template>
-<xsl:template match="x:div[@class='asagecell']">
+
+<xsl:template match="x:sagecell">
   <xsl:text>\begin{lstlisting}</xsl:text>
   <xsl:apply-templates mode="verbatim"/>
   <xsl:text>\end{lstlisting}</xsl:text>
+</xsl:template>
+
+<xsl:template match="x:sagecell/x:pre">
+  <xsl:apply-templates select="./x:code/node()"/>
+</xsl:template>
+
+<xsl:template match="x:div[@class='asagecell']">
 </xsl:template>
 
 

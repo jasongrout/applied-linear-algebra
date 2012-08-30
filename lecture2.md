@@ -11,6 +11,7 @@ the imaginary part of $z$ is 0).
 </div>
 
 <div class="exercise">
+Answer the following.
 
 #. Let $A=\begin{bmatrix}4&4+i&2+i\\1-i&2-i&5\end{bmatrix}$.  What is
    $A^*$?  Is $A$ hermitian?
@@ -20,6 +21,8 @@ the imaginary part of $z$ is 0).
 </div>
 
 <div class="exercise">
+
+Answer the following.
 
 #. What must be true about diagonal entries of hermitian matrices?
 #. Prove that $AA^*$ is always hermitian.
@@ -50,6 +53,7 @@ as the (2,1) element of $B^*A^*$.
 </div>
 
 <div class="exercise">
+Answer the following.
 
 #. Prove that $(AB)^{-1}=B^{-1}A^{-1}$.
 #. Prove that $(A^*)^{-1}=(A^{-1})^*$.
@@ -57,6 +61,7 @@ as the (2,1) element of $B^*A^*$.
 </div>
 
 <div class="exercise">
+Answer the following.
 
 #. What is the angle between $(1,2)$ and $(2,-1)$?  Are these vectors
 orthogonal? [Hint: use equation (2.3) for the first question.]

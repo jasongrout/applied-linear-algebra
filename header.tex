@@ -55,7 +55,7 @@ frame=single
 %\AddToShipoutPicture{\put(10,10){\small Draft: \today\ at \currenttime }}%--- version: \MakeUppercase{\svnInfoRevision}}}
 
 \theoremstyle{plain}
-\newtheorem{theorem}{Theorem}%[chapter]
+\newtheorem{theorem}{Theorem}[chapter]
 \newtheorem*{theorem*}{Theorem}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem*{lemma*}{Lemma}
@@ -89,7 +89,7 @@ frame=single
 
 %\newtheorem{problem}[theorem]{Problem}
 \theoremstyle{problem}
-\newtheorem{problemnum}[theorem]{Exercise}
+\newtheorem{problemnum}{Exercise}[chapter]
 \newenvironment{exercise}[1][]{\begin{problemnum}[#1]}{\end{problemnum}\nopagebreak\hrule\bigskip}
 
 

@@ -2,6 +2,7 @@
 % Jason Grout
 % Fall 2012
 
+<frontmatter>
 
 # Preface
 
@@ -19,3 +20,19 @@ An online version of these notes is available that includes some
 enhancements from [Sage](http://www.sagemath.org).
 
 **Make sure to read and understand each chapter as we cover it in class.**
+
+# Class Plans
+
+27 Aug 2012
+-----------
+
+#. Some highlights of why studying applied, numerical linear algebra
+ is important.
+
+#. Complex numbers.
+
+#. Review of key concepts from linear algebra (see exercises).
+
+</frontmatter>
+
+<mainmatter>
