@@ -52,6 +52,8 @@ Class Plans
         perturbed = wilkinson.change_ring(R)+(R(coefficient)-c)*x^19
         original_roots = [1..20]
         perturbed_roots = [i[0] for i in perturbed.roots()]
+        p=points([list(CC(i)) for i in perturbed_roots],color='red',size=50)
+        p+=points([i,0] for i in [1..20])
         # match up roots
         rootlist=[]
         for r in [1..20]:
@@ -59,13 +61,18 @@ Class Plans
             matching_root = min([[i, abs(r-i),index] for index,i in enumerate(perturbed_roots)], key=lambda x: x[1])
             rootlist.append([r, matching_root[0], matching_root[1]])
             perturbed_roots.pop(matching_root[2])
-  
-        html("Changing the $x^{19}$ term from $-210x^{19}$ to $%sx^{19}$ gives the following differences in roots"%R(coefficient))
-  
-        html.table(rootlist, header=["Original root", "Perturbed root", "Distance"])
-```
 
-      </sagecell>
+        html("Changing the $x^{19}$ term from $-210x^{19}$ to $%sx^{19}$ gives the following differences in roots"%R(coefficient))
+        maxerror = max(i[2] for i in rootlist)
+        html("Estimate of maximum error: %s; %s times the coefficient perturbation"%(maxerror, R(maxerror)/(R(coefficient)+210)))
+        p.show(ymin=-1,ymax=1)
+
+        html.table(rootlist,
+        header=["Original root", "Perturbed root", "Distance"])
+
+    ```
+
+    </sagecell>
 
 #. Review of key concepts from linear algebra (see exercises).
 
@@ -88,6 +95,43 @@ Class Plans
 #. Complex numbers
 
 #. Start working on exercises for Lecture 2.
+
+10 Sep 2012
+-----------
+
+### Prepare
+
+#. Hand in problems from Lecture 1.
+
+#. Read chapter 2
+
+#. Do as many from 2.1--2.3, 2.5--2.7 as you can
+
+### Class
+
+#. Present Exercise 1.13, 1.15 (text exercises 1.1, 1.4).  Emphasize
+ how to get the matrices in 1.13 (do the operations on identity
+ matrices).
+
+#. Introduce orthogonality.  Orthogonality helps tremendously with two
+ different problems:
+
+    #. Sensitivity.  If a system of equations is solving lines that
+       are very close to each other, then small changes in the input
+       can drastically change the solutions.
+   
+    #. Efficiency.  Having an orthogonal basis makes it *much* easier
+       to find coordinate vectors.  It's a dot product, rather than
+       solving a system of equations.
+
+#. Present exercises 2.1--2.3, 2.5--2.7 (or work out)
+
+#. Work out 2.9, 2.10
+
+#. Show equations (2.9) and (2.10) in the text are right.
+
+
+
 
 </frontmatter>
 
