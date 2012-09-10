@@ -46,9 +46,13 @@
 <li><a href="#aug-2012">27 Aug 2012</a></li>
 <li><a href="#aug-2012-1">29 Aug 2012</a></li>
 <li><a href="#sep-2012">05 Sep 2012</a></li>
+<li><a href="#sep-2012-1">10 Sep 2012</a><ul>
+<li><a href="#prepare">Prepare</a></li>
+<li><a href="#class">Class</a></li>
+</ul></li>
 </ul></li>
 <li><a href="#lecture-1">Lecture 1</a></li>
-<li><a href="#draft-lecture-2-orthogonal-vectors-and-matrices">(DRAFT) Lecture 2: Orthogonal Vectors and Matrices</a><ul>
+<li><a href="#lecture-2-orthogonal-vectors-and-matrices">Lecture 2: Orthogonal Vectors and Matrices</a><ul>
 <li><a href="#in-class-activities">In-class activities</a></li>
 </ul></li>
 </ul>
@@ -81,6 +85,8 @@ def _(precision=slider(40,100,1,default=53), coefficient=slider([c-eps..c-eps/20
     perturbed = wilkinson.change_ring(R)+(R(coefficient)-c)*x^19
     original_roots = [1..20]
     perturbed_roots = [i[0] for i in perturbed.roots()]
+    p=points([list(CC(i)) for i in perturbed_roots],color='red',size=50)
+    p+=points([i,0] for i in [1..20])
     # match up roots
     rootlist=[]
     for r in [1..20]:
@@ -90,8 +96,13 @@ def _(precision=slider(40,100,1,default=53), coefficient=slider([c-eps..c-eps/20
         perturbed_roots.pop(matching_root[2])
 
     html("Changing the $x^{19}$ term from $-210x^{19}$ to $%sx^{19}$ gives the following differences in roots"%R(coefficient))
+    maxerror = max(i[2] for i in rootlist)
+    html("Estimate of maximum error: %s; %s times the coefficient perturbation"%(maxerror, R(maxerror)/(R(coefficient)+210)))
+    p.show(ymin=-1,ymax=1)
 
-    html.table(rootlist, header=["Original root", "Perturbed root", "Distance"])
+    html.table(rootlist,
+    header=["Original root", "Perturbed root", "Distance"])
+
 </div></div></div></li>
 <li><p>Review of key concepts from linear algebra (see exercises).</p></li>
 </ol>
@@ -106,6 +117,25 @@ def _(precision=slider(40,100,1,default=53), coefficient=slider([c-eps..c-eps/20
 <li><p>Present the rest of the exercises for Lecture 1</p></li>
 <li><p>Complex numbers</p></li>
 <li><p>Start working on exercises for Lecture 2.</p></li>
+</ol>
+<h2 id="sep-2012-1"><a href="#TOC">10 Sep 2012</a></h2>
+<h3 id="prepare"><a href="#TOC">Prepare</a></h3>
+<ol>
+<li><p>Hand in problems from Lecture 1.</p></li>
+<li><p>Read chapter 2</p></li>
+<li><p>Do as many from 2.1–2.3, 2.5–2.7 as you can</p></li>
+</ol>
+<h3 id="class"><a href="#TOC">Class</a></h3>
+<ol>
+<li><p>Present Exercise 1.13, 1.15 (text exercises 1.1, 1.4). Emphasize how to get the matrices in 1.13 (do the operations on identity matrices).</p></li>
+<li><p>Introduce orthogonality. Orthogonality helps tremendously with two different problems:</p>
+<ol>
+<li><p>Sensitivity. If a system of equations is solving lines that are very close to each other, then small changes in the input can drastically change the solutions.</p></li>
+<li><p>Efficiency. Having an orthogonal basis makes it <em>much</em> easier to find coordinate vectors. It’s a dot product, rather than solving a system of equations.</p></li>
+</ol></li>
+<li><p>Present exercises 2.1–2.3, 2.5–2.7 (or work out)</p></li>
+<li><p>Work out 2.9, 2.10</p></li>
+<li><p>Show equations (2.9) and (2.10) in the text are right.</p></li>
 </ol>
 </div>
 <div class="mainmatter">
@@ -275,7 +305,7 @@ Text exercise 1.4
 </div>
 
 
-<h1 id="draft-lecture-2-orthogonal-vectors-and-matrices"><a href="#TOC">(DRAFT) Lecture 2: Orthogonal Vectors and Matrices</a></h1>
+<h1 id="lecture-2-orthogonal-vectors-and-matrices"><a href="#TOC">Lecture 2: Orthogonal Vectors and Matrices</a></h1>
 <p>The set of complex numbers is denoted \(\mathbb{C}\). The conjugate of the complex number \(z=a+bi\) is \(\bar z = a-bi\).</p>
 <h2 id="in-class-activities"><a href="#TOC">In-class activities</a></h2>
 
