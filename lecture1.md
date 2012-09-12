@@ -192,11 +192,11 @@ Write $A\begin{pmatrix} 1\\2\\3\end{pmatrix}$ as a linear combination of the col
 </div>
 
 <div class="exercise">
-Express $AB$ as:
+Do the following.
 
-#. a linear combination of columns of $A$
-#. a linear combination of rows of $B$.
-#. dot products of rows of $A$ and columns of $B$.
+#. Express the columns of $AB$ as a linear combination of columns of $A$
+#. Express the rows of $AB$ as a linear combination of rows of $B$.
+#. Express the entries of $AB$ as dot products of rows of $A$ and columns of $B$.
 #. What if $B$ is a matrix of all ones?  What does $AB$ compute then?  What does $BA$ compute?
 
 </div>
