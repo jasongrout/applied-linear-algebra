@@ -1,8 +1,7 @@
-# Lecture 2: Orthogonal Vectors and Matrices
+Lecture 2: Orthogonal Vectors and Matrices
+==========================================
 
 The set of complex numbers is denoted $\mathbb{C}$.  The conjugate of the complex number $z=a+bi$ is $\bar z = a-bi$.
-
-## In-class activities
 
 <!-- Needed for Text Exercise 2.3 -->
 <div class="exercise">
@@ -136,3 +135,4 @@ Text exercise 2.6
 <div class="exercise">
 Text exercise 2.7
 </div>
+
