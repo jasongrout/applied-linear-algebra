@@ -43,3 +43,15 @@ div.definition span.term {
 .collapsible .title:after {
     content: " (click to toggle)";
 }
+
+/* .asagecell:before{
+content: "Sage Cell (inactive)";
+font-weight:bold;
+font-decoration:underline;
+}
+.asagecell {
+    white-space:pre-wrap;
+    border: 1px solid black;
+    font-family: monospace;
+}
+*/
