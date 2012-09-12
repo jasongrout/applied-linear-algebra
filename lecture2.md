@@ -4,10 +4,15 @@ The set of complex numbers is denoted $\mathbb{C}$.  The conjugate of the comple
 
 ## In-class activities
 
-<!-- Needed for Text Exercise 2.3 -->
+<!-- Needed for Text Exercise 2.3 and 2.5 -->
 <div class="exercise">
-Show that if $z\bar z = z^2$, then $z$ must be a real number (i.e.,
+Do the following
+
+#. Show that if $z\bar z = z^2$, then $z$ must be a real number (i.e.,
 the imaginary part of $z$ is 0).
+
+#. Show that if $z\bar z = -z^2$, then $z$ must be purely an imaginary number
+(i.e., the real part of $z$ is 0).
 </div>
 
 <div class="exercise">
@@ -41,11 +46,19 @@ print A.H==A
 
 </sagecell>
 
+<!-- This exercise is probably too tedious, and we already have a -->
+<!-- *lot* of other problems.  Keeping this here so the numbering -->
+<!-- doesn't get messed up.-->
+
+<!--
 <div class="exercise">
+
 Give an example showing that the inner product on $\mathbb{C}^2$ is
 bilinear.
 [Hint: compute explicitly each side of the 3 defining equations defining bilinearity.]
+
 </div>
+-->
 
 <div class="exercise">
 Give an example showing that the (2,1) element of $(AB)^*$ is the same
