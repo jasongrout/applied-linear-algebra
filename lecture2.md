@@ -125,7 +125,8 @@ with the same eigenvector $\vec x$.
 </div>
 
 <div class="exercise">
-Text exercise 2.5
+Text exercise 2.5.
+[Hint: For any matrices $A$ and $B$, $(A+B)(A-B)=(A-B)(A+B)$.  Prove this hint if you use it.]
 </div>
 
 <div class="exercise">
