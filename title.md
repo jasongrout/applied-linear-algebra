@@ -124,13 +124,11 @@ Class Plans
        to find coordinate vectors.  It's a dot product, rather than
        solving a system of equations.
 
-#. Present exercises 2.1--2.3, 2.5--2.7 (or work out)
+#. Present exercises 2.1--2.3, 2.5--2.7
 
 #. Work out 2.9, 2.10
 
 #. Show equations (2.9) and (2.10) in the text are right.
-
-
 
 
 </frontmatter>
