@@ -43,7 +43,7 @@ latex: $(MD_FILES)
 	cp -r by-sa.pdf output/latex
 	pandoc -S -s  $(MD_FILES)  --no-highlight -t html --mathjax \
 	| xsltproc --novalid latex.xsl - > output/latex/applied-linear-algebra-xsl.tex
-	cat output/latex/applied-linear-algebra-xsl.tex| sed "s/&amp;/\&/g" > output/latex/applied-linear-algebra.tex
+	cat output/latex/applied-linear-algebra-xsl.tex| sed "s/&amp;/\&/g" | sed "s/&lt;/</g" | sed "s/\\$$/\\\\$$/g" > output/latex/applied-linear-algebra.tex
 
 pdf: latex
 	mkdir -p output/pdf

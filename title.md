@@ -5,11 +5,14 @@
 <frontmatter>
 
 <!-- an 's' prefix signifies a 'stretch' version -->
-$\newcommand{\norm}[1]{\lVert#1\rVert}$
-$\newcommand{\norms}[1]{\left\lVert#1\right\rVert}$
-$\newcommand{\abs}[1]{\lvert#1\rvert}$
-$\newcommand{\abss}[1]{\left\lvert#1\right\rvert}$
-
+$\newcommand{\norm}[1]{\lVert{}#1\rVert{}}$
+$\newcommand{\norms}[1]{\left\lVert{}#1\right\rVert{}}$
+$\newcommand{\abs}[1]{\lvert{}#1\rvert{}}$
+$\newcommand{\abss}[1]{\left\lvert{}#1\right\rvert{}}$
+\newcommand{\norm}[1]{\lVert{}#1\rVert{}}
+\newcommand{\norms}[1]{\left\lVert{}#1\right\rVert{}}
+\newcommand{\abs}[1]{\lvert{}#1\rvert{}}
+\newcommand{\abss}[1]{\left\lvert{}#1\right\rvert{}}
 
 Preface
 =======

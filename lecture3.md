@@ -28,9 +28,9 @@ Norms give us a way to associate a number with a vector.  The number
 may represent something other than physical distances.
 
 A manufacturing robot has costs associated with moving the tip of its
-arm.  Moving east or west costs $2/meter, moving north or south costs
-$3/meter, and moving up or down costs $5/meter.  A vector $\vec
-v=(a,b,c)$ represents moving $a$ meters east, $b$ meters north, and
+arm.  Moving east or west costs \$2/meter, moving north or south costs
+\$3/meter, and moving up or down costs \$5/meter.  A vector $\vec v=(a,b,c)$ 
+represents moving $a$ meters east, $b$ meters north, and
 $c$ meters up (each number can be negative to move the opposite
 direction).
 
