@@ -15,7 +15,7 @@ h1 {
 }
 
 div.exercise:before {
-    content: "Exercise " counter(chapter) "." counter(exercises) ". ";
+    content: "Problem " counter(chapter) "." counter(exercises) ". ";
     font-weight:bold;
 }
 
