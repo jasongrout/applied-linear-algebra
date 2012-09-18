@@ -132,7 +132,7 @@ with the same eigenvector $\vec x$.
 
 <div class="exercise">
 Text exercise 2.5.
-[Hint: For any matrices $A$ and $B$, $(A+B)(A-B)=(A-B)(A+B)$.  Prove this hint if you use it.]
+[Hint: For any matrix $A$ , $(I+A)(I-A)=(I-A)(I+A)$.  Prove this hint if you use it.]
 </div>
 
 <div class="exercise">
