@@ -50,6 +50,10 @@
 <li><a href="#prepare">Prepare</a></li>
 <li><a href="#class">Class</a></li>
 </ul></li>
+<li><a href="#sep-2012-2">12 Sep 2012</a><ul>
+<li><a href="#prepare-1">Prepare</a></li>
+<li><a href="#class-1">Class</a></li>
+</ul></li>
 </ul></li>
 <li><a href="#lecture-1">Lecture 1</a></li>
 <li><a href="#lecture-2-orthogonal-vectors-and-matrices">Lecture 2: Orthogonal Vectors and Matrices</a></li>
@@ -132,8 +136,17 @@ def _(precision=slider(40,100,1,default=53), coefficient=slider([c-eps..c-eps/20
 <li><p>Efficiency. Having an orthogonal basis makes it <em>much</em> easier to find coordinate vectors. It’s a dot product, rather than solving a system of equations.</p></li>
 </ol></li>
 <li><p>Present exercises 2.1–2.3, 2.5–2.7</p></li>
-<li><p>Work out 2.9, 2.10</p></li>
+</ol>
+<h2 id="sep-2012-2"><a href="#TOC">12 Sep 2012</a></h2>
+<h3 id="prepare-1"><a href="#TOC">Prepare</a></h3>
+<ol>
+<li>Do as many from 2.8, 2.10-2.17 as you can</li>
+</ol>
+<h3 id="class-1"><a href="#TOC">Class</a></h3>
+<ol>
 <li><p>Show equations (2.9) and (2.10) in the text are right.</p></li>
+<li><p>Introduction to Sage</p></li>
+<li><p>Work out 2.9 in Sage</p></li>
 </ol>
 </div>
 <div class="mainmatter">
@@ -157,8 +170,10 @@ A <span class="term">vector space</span> is the span of some vectors. Equivalent
 <li>\(\{c(1,2,3) \mid c\in\mathbb{R}\}\): all multiples (i.e., linear combinations) of the vector \((1,2,3)\). The endpoints of these vectors form a line through the origin.</li>
 <li>\(\{(0,0,0)\}\): just the zero vector (i.e., all linear combinations of the zero vector). This vector space has only one vector, as opposed to the others which have an infinite number of vectors.</li>
 <li>\(\{c_1(-1,0,1)+c_2(2,1,2) \mid c_1,c_2\in\mathbb{R}\}\): all linear combinations of \((-1,0,1)\) and \((2,1,2)\). The endpoints of these vectors form a plane through the origin.</li>
-<li>\(\{c_1(-1,0,1)+c_2(2,1,2)+c_3(-4,-1,0) \mid c_1,c_2,c_3\in\mathbb{R}\}\): all linear combinations of \((-1,0,1)\), \((2,1,2)\), and \((-4,-1,0)\). Hint: Since the third vector \((-4,-1,0)\) is actually a linear combination of \((-1,0,1)\) and \((2,1,2)\), \((-4,-1,0)=2(-1,0,1)-(2,1,2)\), any linear combination of the three vectors can actually be written as a linear combination of just the first two vectors. For example,
-</li>
+<li>\(\{c_1(-1,0,1)+c_2(2,1,2)+c_3(-4,-1,0) \mid c_1,c_2,c_3\in\mathbb{R}\}\): all linear combinations of \((-1,0,1)\), \((2,1,2)\), and \((-4,-1,0)\). Hint: Since the third vector \((-4,-1,0)\) is actually a linear combination of \((-1,0,1)\) and \((2,1,2)\), \((-4,-1,0)=2(-1,0,1)-(2,1,2)\), any linear combination of the three vectors can actually be written as a linear combination of just the first two vectors. For example, \[\begin{align*}
+3(-1,0,1)-2(2,1,2)+2(-4,-1,0)&amp;=3(-1,0,1)-2(2,1,2)+2(2(-1,0,1)-(2,1,2))\\
+&amp;=7(-1,0,1)-4(2,1,2).
+\end{align*}\]</li>
 <li>The set of all polynomials with degree at most 3.</li>
 <li>The set of all polynomials with degree equal to 3.</li>
 <li>The set of all polynomials.</li>
@@ -384,6 +399,8 @@ q2=vector(QQ,[2,1,-2])/3
 q1=vector(QQ,[1,2,2])/3
 
 </div>
+
+
 <div class="exercise">
 Text exercise 2.1
 </div>
