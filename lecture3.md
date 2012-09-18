@@ -24,12 +24,18 @@ print v.norm(p=Infinity)
 </div>
 
 <div class="exercise">
+Norms give us a way to associate a number with a vector.  The number
+may represent something other than physical distances.
 
-<!-- TODO: check to make sure this is a norm! -->
+A manufacturing robot has costs associated with moving the tip of its
+arm.  Moving east or west costs $2/meter, moving north or south costs
+$3/meter, and moving up or down costs $5/meter.  A vector $\vec
+v=(a,b,c)$ represents moving $a$ meters east, $b$ meters north, and
+$c$ meters up (each number can be negative to move the opposite
+direction).
 
-Moving east/west costs $2/meter, moving north/south costs $3/meter, and moving up/down costs $5/meter.  A vector $\vec v=(a,b,c)$ represents moving $a$ meters east, $b$ meters north, and $c$ meters up (each number can be negative to move the opposite direction).
-
-#. Come up with a norm formula that gives the cost for moving along a vector.  What is the norm of $(a,b,c)$?
+#. Come up with a norm formula that gives the cost for moving along a
+ vector $(a,b,c)$.
 
 #. What is the norm of $(1,2,3)$ and $(2,-1,3)$?
 
@@ -58,8 +64,12 @@ vectors of the domain. Explain why this is true.
 
 <div class="exercise">
 
-Explain each of the following inequalities (these are in the line between equations (3.8)
-and (3.9) in the text).
+Let $A=[a_1\,a_2\,\cdots\,a_n]$ be an $n$ by $n$ matrix with columns
+$a_1,a_2,\ldots,a_n$.  Let $x\in \mathbb{C}^n$ be a vector inside the
+diamond-shaped 1-norm unit ball in $\mathbb{C}^n$ (i.e.,
+$\sum_{j=1}^n\abs{x_j}\leq 1$).  Explain why each of the following
+inequalities is true.
+[Hint: these inequalities are from the line between equations (3.8) and (3.9) in the text.]
 
 $$\norm{Ax}_1 = \norms{\sum_{j=1}^n x_ja_j}_1 \leq
 \sum_{j=1}^n\abs{x_j}\norm{a_j}_1\leq \max_{1\leq j\leq n}\norm{a_j}_1$$
@@ -70,24 +80,43 @@ $$\norm{Ax}_1 = \norms{\sum_{j=1}^n x_ja_j}_1 \leq
 Prove equation (3.10) in the text is true.
 </div>
 
+<!--
 <div class="exercise">
-Prove equations (3.11) and (3.12).
+We'll prove (3.12) without relying on the more general result (3.11).
+We'll prove that if we have vectors $ x, y\in \mathbb{C}^n$, then
+$\abs{ x^* y}\leq \norm{ x}_2\norm{ y}_2$.
+
+Let $p(t) = \norm{t x+ y}^2$ be a polynomial with the variable
+$t$.
+
+#. Explain why $p(t)\geq 0$ for all $t$.
+
+#. Expand $p(t)$ to be a quadratic polynomial
+$at^2+bt+c$. [Hint: remember $\norm{x}^2=x^*x$.]
+
+#. If $p(t)\geq 0$, then from the quadratic formula, $b^2\geq\frac{b^2-4ac}$
+
+</div>
+-->
+
+<div class="exercise">
+Explain why (3.12) is true, given that equation (2.3) is true.
 </div>
 
-
 <div class="exercise">
-Explain each equality or inequality in equation (3.13).
+Explain why each equality or inequality in equation (3.13) is true.
 </div>
 
 <div class="exercise">
-Explain these inequalities that occur just before equation (3.14):
+Explain why these inequalities that occur just before equation (3.14)
+are true:
 
 $$\norm{ABx}_{(\ell)}\leq \norm{A}_{(\ell,m)} \norm{Bx}_{(m)}\leq \norm{A}_{(\ell,m)}\norm{B}_{(m,n)}\norm{x}_{(n)}.$$
 </div>
 
 <div class="exercise">
 Give an example showing that the inequality in equation (3.14) is not
-tight.  In other words, give explicit matrices $A$ and $B$ so that
+tight.  In other words, give an induced matrix norm and explicit matrices $A$ and $B$ so that
 $\norm{AB}_{(\ell,n)}\neq \norm{A}_{(\ell,m)}\norm{B}_{(m,n)}$.
 </div>
 
@@ -118,3 +147,19 @@ Text exercise 3.2
 <div class="exercise">
 Text exercise 3.3
 </div>
+
+You can calculate matrix norms in Sage.  You might use this to check
+some of your examples.
+
+<sagecell>
+
+```
+# An example of how to compute norms of a matrix in Sage.
+A=matrix(CDF, [[1,-2*I], [-I, 3]])
+print A.norm(p=1)
+print A.norm(p=2)
+print A.norm(p=Infinity)
+print A.norm(p='frob')
+```
+
+</sagecell>
