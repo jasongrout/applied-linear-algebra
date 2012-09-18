@@ -101,6 +101,12 @@ q1=vector(QQ,[1,2,2])/3
 
 </sagecell>
 
+<!-- For next time...
+<div class="exercise">
+Prove equations (2.9) and (2.10) in the text.
+</div>
+-->
+
 <div class="exercise">
 Text exercise 2.1
 </div>
