@@ -8,7 +8,7 @@ else
     STASHPOP=
 endif
 
-MD_FILES = title.md lecture1.md lecture2.md endmatter.md
+MD_FILES = title.md lecture1.md lecture2.md lecture3.md endmatter.md
 
 all: xhtml
 
