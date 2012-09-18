@@ -1,4 +1,5 @@
-# Lecture 1
+Lecture 1: Matrix-vector multiplication
+=======================================
 
 This should primarily be a review of concepts from the first linear
 algebra class, though there are probably examples you haven't seen
