@@ -51,10 +51,10 @@ bases and the dimension of the vector space.
   #. $\{c_1(-1,0,1)+c_2(2,1,2)+c_3(-4,-1,0) \mid
   c_1,c_2,c_3\in\mathbb{R}\}$: all linear combinations of $(-1,0,1)$,
   $(2,1,2)$, and $(-4,-1,0)$.  Hint: Since the third vector $(-4,-1,0)$ is actually a linear combination of $(-1,0,1)$ and $(2,1,2)$, $(-4,-1,0)=2(-1,0,1)-(2,1,2)$, any linear combination of the three vectors can actually be written as a linear combination of just the first two vectors.  For example, 
-\begin{align*}
+$$\begin{align*}
 3(-1,0,1)-2(2,1,2)+2(-4,-1,0)&=3(-1,0,1)-2(2,1,2)+2(2(-1,0,1)-(2,1,2))\\
 &=7(-1,0,1)-4(2,1,2).
-\end{align*}
+\end{align*}$$
   #. The set of all polynomials with degree at most 3.
   #. The set of all polynomials with degree equal to 3.
   #. The set of all polynomials.
