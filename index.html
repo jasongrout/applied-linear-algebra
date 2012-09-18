@@ -61,7 +61,7 @@
 </ul>
 </div>
 <div class="frontmatter">
- \(\newcommand{\norm}[1]{\lVert{}#1\rVert{}}\) \(\newcommand{\norms}[1]{\left\lVert{}#1\right\rVert{}}\) \(\newcommand{\abs}[1]{\lvert{}#1\rvert{}}\) \(\newcommand{\abss}[1]{\left\lvert{}#1\right\rvert{}}\)
+ \(\newcommand{\norm}[1]{\lVert #1\rVert }\) \(\newcommand{\norms}[1]{\left\lVert #1\right\rVert }\) \(\newcommand{\abs}[1]{\lvert #1\rvert }\) \(\newcommand{\abss}[1]{\left\lvert #1\right\rvert }\)
 <h1 id="preface"><a href="#TOC">Preface</a></h1>
 <p>The chapter titles in these notes correspond with the chapter titles in the book <a href="http://people.maths.ox.ac.uk/trefethen/text.html"><em>Numerical Linear Algebra</em></a> by Trefethen and Bau, published by SIAM. The sections below are labeled “Lectures” because the chapters in the book are labeled “Lectures”, but they may not correspond with single class periods.</p>
 <div class="html">
@@ -440,7 +440,7 @@ Text exercise 2.7
 <p>You can use Sage examples to explore <a href="http://interact.sagemath.org/node/58">unit balls</a> and <a href="http://interact.sagemath.org/node/27%20induced%20matrix%20norms">induced matrix norms</a>.</p>
 <div class="exercise">
 
-<p>Let \(\vec v = (1,\,2+3i,\, -4i)\). Compute \(\lVert{}\vec v\rVert{}_1\), \(\lVert{}\vec v\rVert{}_2\), \(\lVert{}\vec v\rVert{}_4\), and \(\lVert{}\vec v\rVert{}_\infty\). Check your work in Sage.</p>
+<p>Let \(\vec v = (1,\,2+3i,\, -4i)\). Compute \(\lVert \vec v\rVert _1\), \(\lVert \vec v\rVert _2\), \(\lVert \vec v\rVert _4\), and \(\lVert \vec v\rVert _\infty\). Check your work in Sage.</p>
 <div class="asagecell">
 # An example of how to compute norms of a vector in Sage.
 v=vector(CDF, [1,-2*I])
@@ -475,9 +475,9 @@ print v.norm(p=Infinity)
 
 <div class="exercise">
 
-<p>Let \(A=[a_1\,a_2\,\cdots\,a_n]\) be an \(n\) by \(n\) matrix with columns \(a_1,a_2,\ldots,a_n\). Let \(x\in \mathbb{C}^n\) be a vector inside the diamond-shaped 1-norm unit ball in \(\mathbb{C}^n\) (i.e., \(\sum_{j=1}^n\lvert{}x_j\rvert{}\leq 1\)). Explain why each of the following inequalities is true. [Hint: these inequalities are from the line between equations (3.8) and (3.9) in the text.]</p>
-<p>\[\lVert{}Ax\rVert{}_1 = \left\lVert{}\sum_{j=1}^n x_ja_j\right\rVert{}_1 \leq
-\sum_{j=1}^n\lvert{}x_j\rvert{}\lVert{}a_j\rVert{}_1\leq \max_{1\leq j\leq n}\lVert{}a_j\rVert{}_1\]</p>
+<p>Let \(A=[a_1\,a_2\,\cdots\,a_n]\) be an \(n\) by \(n\) matrix with columns \(a_1,a_2,\ldots,a_n\). Let \(x\in \mathbb{C}^n\) be a vector inside the diamond-shaped 1-norm unit ball in \(\mathbb{C}^n\) (i.e., \(\sum_{j=1}^n\lvert x_j\rvert \leq 1\)). Explain why each of the following inequalities is true. [Hint: these inequalities are from the line between equations (3.8) and (3.9) in the text.]</p>
+<p>\[\lVert Ax\rVert _1 = \left\lVert \sum_{j=1}^n x_ja_j\right\rVert _1 \leq
+\sum_{j=1}^n\lvert x_j\rvert \lVert a_j\rVert _1\leq \max_{1\leq j\leq n}\lVert a_j\rVert _1\]</p>
 </div>
 
 <div class="exercise">
@@ -496,11 +496,11 @@ Explain why each equality or inequality in equation (3.13) is true.
 
 <div class="exercise">
 <p>Explain why these inequalities that occur just before equation (3.14) are true:</p>
-\[\lVert{}ABx\rVert{}_{(\ell)}\leq \lVert{}A\rVert{}_{(\ell,m)} \lVert{}Bx\rVert{}_{(m)}\leq \lVert{}A\rVert{}_{(\ell,m)}\lVert{}B\rVert{}_{(m,n)}\lVert{}x\rVert{}_{(n)}.\]
+\[\lVert ABx\rVert _{(\ell)}\leq \lVert A\rVert _{(\ell,m)} \lVert Bx\rVert _{(m)}\leq \lVert A\rVert _{(\ell,m)}\lVert B\rVert _{(m,n)}\lVert x\rVert _{(n)}.\]
 </div>
 
 <div class="exercise">
-Give an example showing that the inequality in equation (3.14) is not tight. In other words, give an induced matrix norm and explicit matrices \(A\) and \(B\) so that \(\lVert{}AB\rVert{}_{(\ell,n)}\neq \lVert{}A\rVert{}_{(\ell,m)}\lVert{}B\rVert{}_{(m,n)}\).
+Give an example showing that the inequality in equation (3.14) is not tight. In other words, give an induced matrix norm and explicit matrices \(A\) and \(B\) so that \(\lVert AB\rVert _{(\ell,n)}\neq \lVert A\rVert _{(\ell,m)}\lVert B\rVert _{(m,n)}\).
 </div>
 
 <div class="exercise">
@@ -510,13 +510,13 @@ Prove equation (3.18).
 <div class="exercise">
 <p>Do the following.</p>
 <ol>
-<li>Either find matrices \(A\) and \(B\) so that \(\lVert{}AB\rVert{}_F&lt;\lVert{}A\rVert{}_F\lVert{}B\rVert{}_F\) or show that such an example does not exist.</li>
-<li>Either find matrices \(A\) and \(B\) so that \(\lVert{}AB\rVert{}_F=\lVert{}A\rVert{}_F\lVert{}B\rVert{}_F\) or show that such an example does not exist.</li>
+<li>Either find matrices \(A\) and \(B\) so that \(\lVert AB\rVert _F&lt;\lVert A\rVert _F\lVert B\rVert _F\) or show that such an example does not exist.</li>
+<li>Either find matrices \(A\) and \(B\) so that \(\lVert AB\rVert _F=\lVert A\rVert _F\lVert B\rVert _F\) or show that such an example does not exist.</li>
 </ol>
 </div>
 
 <div class="exercise">
-Show that if \(Q\) is a unitary matrix, then \(\lVert{}QA\rVert{}_F=\lVert{}A\rVert{}_F\). [Hint: see Theorem 3.1.]
+Show that if \(Q\) is a unitary matrix, then \(\lVert QA\rVert _F=\lVert A\rVert _F\). [Hint: see Theorem 3.1.]
 </div>
 
 <div class="exercise">
