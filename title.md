@@ -126,10 +126,22 @@ Class Plans
 
 #. Present exercises 2.1--2.3, 2.5--2.7
 
-#. Work out 2.9, 2.10
+
+12 Sep 2012
+-----------
+
+### Prepare
+
+#. Do as many from 2.8, 2.10-2.17 as you can
+
+
+### Class
 
 #. Show equations (2.9) and (2.10) in the text are right.
 
+#. Introduction to Sage
+
+#. Work out 2.9 in Sage
 
 </frontmatter>
 
