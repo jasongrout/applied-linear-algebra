@@ -16,7 +16,8 @@ print
 print S
 print
 print V
-print A==U*S*V.H
+print
+print A-U*S*V.H # should be very close to the zero matrix
 ```
 
 </sagecell>
