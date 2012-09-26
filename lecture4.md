@@ -1,9 +1,9 @@
 Lecture 4: The Singular Value Decomposition
 ===========================================
 
-You can use a Sage example to explore
-[SVD](http://interact.sagemath.org/node/60) for invertible 2 by 2
-matrices.  You can also compute the SVD in Sage.
+You can use a Sage [interact](http://interact.sagemath.org/node/60)
+example to explore the SVD for invertible 2 by 2 matrices.  You can
+also compute the SVD in Sage.
 
 <sagecell>
 
