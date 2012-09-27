@@ -63,7 +63,10 @@
 </ul>
 </div>
 <div class="frontmatter">
-<p> \(\newcommand{\norm}[1]{\lVert #1\rVert }\) \(\newcommand{\norms}[1]{\left\lVert #1\right\rVert }\) \(\newcommand{\abs}[1]{\lvert #1\rvert }\) \(\newcommand{\abss}[1]{\left\lvert #1\right\rvert }\) \(\newcommand{\rank}{\operatorname{rank}}\)</p>
+
+
+
+<p>\(\newcommand{\norm}[1]{\lVert #1\rVert }\) \(\newcommand{\norms}[1]{\left\lVert #1\right\rVert }\) \(\newcommand{\abs}[1]{\lvert #1\rvert }\) \(\newcommand{\abss}[1]{\left\lvert #1\right\rvert }\) \(\newcommand{\rank}{\operatorname{rank}}\)</p>
 <h1 id="preface"><a href="#TOC">Preface</a></h1>
 <p>The chapter titles in these notes correspond with the chapter titles in the book <a href="http://people.maths.ox.ac.uk/trefethen/text.html"><em>Numerical Linear Algebra</em></a> by Trefethen and Bau, published by SIAM. The sections below are labeled “Lectures” because the chapters in the book are labeled “Lectures”, but they may not correspond with single class periods.</p>
 <div class="html">
@@ -442,7 +445,7 @@ Text exercise 2.7
 <p>You can use Sage examples to explore <a href="http://interact.sagemath.org/node/58">unit balls</a> and <a href="http://interact.sagemath.org/node/27%20induced%20matrix%20norms">induced matrix norms</a>.</p>
 <div class="exercise">
 
-<p>Let \(\vec v = (1,\,2+3i,\, -4i)\). Compute \(\lVert \vec v\rVert _1\), \(\lVert \vec v\rVert _2\), \(\lVert \vec v\rVert _4\), and \(\lVert \vec v\rVert _\infty\). Check your work in Sage.</p>
+<p>Let \(\vec v = (1,\,2+3i,\, -4i)\). Compute \(\norm{\vec v}_1\), \(\norm{\vec v}_2\), \(\norm{\vec v}_4\), and \(\norm{\vec v}_\infty\). Check your work in Sage.</p>
 <div class="asagecell">
 # An example of how to compute norms of a vector in Sage.
 v=vector(CDF, [1,-2*I])
@@ -477,9 +480,9 @@ print v.norm(p=Infinity)
 
 <div class="exercise">
 
-<p>Let \(A=[a_1\,a_2\,\cdots\,a_n]\) be an \(n\) by \(n\) matrix with columns \(a_1,a_2,\ldots,a_n\). Let \(x\in \mathbb{C}^n\) be a vector inside the diamond-shaped 1-norm unit ball in \(\mathbb{C}^n\) (i.e., \(\sum_{j=1}^n\lvert x_j\rvert \leq 1\)). Explain why each of the following inequalities is true. [Hint: these inequalities are from the line between equations (3.8) and (3.9) in the text.]</p>
-<p>\[\lVert Ax\rVert _1 = \left\lVert \sum_{j=1}^n x_ja_j\right\rVert _1 \leq
-\sum_{j=1}^n\lvert x_j\rvert \lVert a_j\rVert _1\leq \max_{1\leq j\leq n}\lVert a_j\rVert _1\]</p>
+<p>Let \(A=[a_1\,a_2\,\cdots\,a_n]\) be an \(n\) by \(n\) matrix with columns \(a_1,a_2,\ldots,a_n\). Let \(x\in \mathbb{C}^n\) be a vector inside the diamond-shaped 1-norm unit ball in \(\mathbb{C}^n\) (i.e., \(\sum_{j=1}^n\abs{x_j}\leq 1\)). Explain why each of the following inequalities is true. [Hint: these inequalities are from the line between equations (3.8) and (3.9) in the text.]</p>
+<p>\[\norm{Ax}_1 = \norms{\sum_{j=1}^n x_ja_j}_1 \leq
+\sum_{j=1}^n\abs{x_j}\norm{a_j}_1\leq \max_{1\leq j\leq n}\norm{a_j}_1\]</p>
 </div>
 
 <div class="exercise">
@@ -498,11 +501,11 @@ Explain why each equality or inequality in equation (3.13) is true.
 
 <div class="exercise">
 <p>Explain why these inequalities that occur just before equation (3.14) are true:</p>
-\[\lVert ABx\rVert _{(\ell)}\leq \lVert A\rVert _{(\ell,m)} \lVert Bx\rVert _{(m)}\leq \lVert A\rVert _{(\ell,m)}\lVert B\rVert _{(m,n)}\lVert x\rVert _{(n)}.\]
+\[\norm{ABx}_{(\ell)}\leq \norm{A}_{(\ell,m)} \norm{Bx}_{(m)}\leq \norm{A}_{(\ell,m)}\norm{B}_{(m,n)}\norm{x}_{(n)}.\]
 </div>
 
 <div class="exercise">
-Give an example showing that the inequality in equation (3.14) is not tight. In other words, give an induced matrix norm and explicit matrices \(A\) and \(B\) so that \(\lVert AB\rVert _{(\ell,n)}\neq \lVert A\rVert _{(\ell,m)}\lVert B\rVert _{(m,n)}\).
+Give an example showing that the inequality in equation (3.14) is not tight. In other words, give an induced matrix norm and explicit matrices \(A\) and \(B\) so that \(\norm{AB}_{(\ell,n)}\neq \norm{A}_{(\ell,m)}\norm{B}_{(m,n)}\).
 </div>
 
 <div class="exercise">
@@ -512,13 +515,13 @@ Prove equation (3.18).
 <div class="exercise">
 <p>Do the following.</p>
 <ol>
-<li>Either find matrices \(A\) and \(B\) so that \(\lVert AB\rVert _F&lt;\lVert A\rVert _F\lVert B\rVert _F\) or show that such an example does not exist.</li>
-<li>Either find matrices \(A\) and \(B\) so that \(\lVert AB\rVert _F=\lVert A\rVert _F\lVert B\rVert _F\) or show that such an example does not exist.</li>
+<li>Either find matrices \(A\) and \(B\) so that \(\norm{AB}_F&lt;\norm{A}_F\norm{B}_F\) or show that such an example does not exist.</li>
+<li>Either find matrices \(A\) and \(B\) so that \(\norm{AB}_F=\norm{A}_F\norm{B}_F\) or show that such an example does not exist.</li>
 </ol>
 </div>
 
 <div class="exercise">
-Show that if \(Q\) is a unitary matrix, then \(\lVert QA\rVert _F=\lVert A\rVert _F\). [Hint: see Theorem 3.1.]
+Show that if \(Q\) is a unitary matrix, then \(\norm{QA}_F=\norm{A}_F\). [Hint: see Theorem 3.1.]
 </div>
 
 <div class="exercise">
@@ -553,7 +556,7 @@ print
 print A-U*S*V.H # should be very close to the zero matrix
 </div>
 <div class="exercise">
-Using the definition of the SVD given in equation (4.4), show that the largest singular value \(\sigma_1\) of a matrix \(A\) is equal to \(\lVert A\rVert _2\).
+Using the definition of the SVD given in equation (4.4), show that the largest singular value \(\sigma_1\) of a matrix \(A\) is equal to \(\norm{A}_2\).
 </div>
 
 <div class="exercise">
@@ -590,19 +593,19 @@ print A-U*S*V.H # should be very close to the zero matrix
 </div>
 <div class="exercise">
     
-Show that if \(B\) is an invertible matrix, then \(\operatorname{rank}(AB)=\operatorname{rank}(A)\) and \(\operatorname{rank}(BC)=\operatorname{rank}(C)\) for any matrices \(A\) and \(C\) that are the right size for multiplication to be defined. This is used in the proof of Theorem 5.1 (and a few other places as well).
+Show that if \(B\) is an invertible matrix, then \(\rank(AB)=\rank(A)\) and \(\rank(BC)=\rank(C)\) for any matrices \(A\) and \(C\) that are the right size for multiplication to be defined. This is used in the proof of Theorem 5.1 (and a few other places as well).
 </div>
 
 <div class="exercise">
 
-<p>Let \(A\) be a matrix and \(A_k=\sum_{j=1}^k \sigma_j u_j v_j^*\), as defined in equation (5.4). Explain why \(\lVert A-A_k\rVert _2=\sigma_{k+1}\) if \(k\leq\operatorname{rank}(A)\). [Hint: see Theorem 5.3.]</p>
+<p>Let \(A\) be a matrix and \(A_k=\sum_{j=1}^k \sigma_j u_j v_j^*\), as defined in equation (5.4). Explain why \(\norm{A-A_k}_2=\sigma_{k+1}\) if \(k\leq\rank(A)\). [Hint: see Theorem 5.3.]</p>
 </div>
 
 <div class="exercise">
 <p>Let \[A=\begin{bmatrix} 1 &amp; 2 &amp; 3\\4 &amp; 5 &amp; 6\\-1 &amp; 2 &amp; 1\end{bmatrix}\].</p>
 <ol>
 <li><p>Write \(A\) as the sum of rank 1 matrices given in equation (5.3). Show explicitly the elements of the sum. You might use Sage to compute the SVD matrices.</p></li>
-<li><p>Calculate the low-rank approximations \(A_1\) and \(A_2\) according to equation (5.4). Find the distance between \(A\) and each of \(A_1\) and \(A_2\), where distance is measured in the matrix 2-norm (i.e., find \(\lVert A-A_1\rVert _2\) and \(\lVert A-A_2\rVert _2\)). Compare these distances to the singular values of \(A\).</p></li>
+<li><p>Calculate the low-rank approximations \(A_1\) and \(A_2\) according to equation (5.4). Find the distance between \(A\) and each of \(A_1\) and \(A_2\), where distance is measured in the matrix 2-norm (i.e., find \(\norm{A-A_1}_2\) and \(\norm{A-A_2}_2\)). Compare these distances to the singular values of \(A\).</p></li>
 <li><p>Explain why \(A_1\) and \(A_2\) are so special (i.e., tell us what Theorem 5.8 says is significant about \(A_1\) and \(A_2\) compared to \(A\)).</p></li>
 </ol>
 </div>
