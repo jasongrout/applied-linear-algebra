@@ -21,3 +21,20 @@ Text exercise 6.4
 Text exercise 6.5
 </div>
 
+
+Lecture 7: QR
+======================
+
+<div class="exercise">
+Text exercise 7.1
+</div>
+<div class="exercise">
+Text exercise 7.5
+</div>
+
+Lecture 10: Householder
+=======================
+
+<div class="exercise">
+Text exercise 10.1
+</div>
