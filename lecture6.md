@@ -32,6 +32,17 @@ Text exercise 7.1
 Text exercise 7.5
 </div>
 
+Lecture 8: Gram-Schmidt
+=======================
+
+We'll have a review question asking about modified Gram-Scmidt later.
+Also, a question involving numerical stability was given in class.
+
+Lecture 9: Matlab
+=======================
+
+We skipped this chapter
+
 Lecture 10: Householder
 =======================
 
