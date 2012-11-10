@@ -66,6 +66,30 @@ Q
 Lecture 10: Householder
 =======================
 
+Here is an example of using Sage to compute a QR decomposition.  For
+matrices over `RDF`, Sage uses Householder reflections to compute the decomposition
+(internally using
+[Scipy](http://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.qr.html)
+and the LAPACK functions
+[dgeqrf](http://www.netlib.org/lapack/double/dgeqrf.f) and [dorgqr](http://www.netlib.org/lapack/double/dorgqr.f)).
+
+<sagecell>
+
+```
+A=matrix(RDF,3,3,[3,2,-1, 2,5,4, 3,1,0])
+Q,R=A.QR()
+
+html.table([
+["$A$", A],
+["$Q$", Q], 
+["$R$", R], 
+["$QQ^*$", Q*Q.H], # should be close to the identity since Q is unitary
+["$A-QR$", A-Q*R], # should be close to zero
+])
+```
+
+</sagecell>
+
 <div class="exercise">
 Text exercise 10.1
 </div>
@@ -100,5 +124,20 @@ decimals in intermediate calculations.
 	#. Calculate $Q$ and $R$ (show how you get them from your
        calculations above) and double-check that $Q$ is unitary and
        that $A=QR$.
+
+</div>
+
+Lecture 11: Least Squares
+=========================
+
+<div class="exercise">
+
+Use least squares to find the best-fitting line for the points
+$(2,3)$, $(-1,2)$, $(5,4)$, $(3,1)$, $(1,3)$.  Use QR decomposition
+(Algorithm 11.2) to do the least squares.  Your final answer
+should be a line of the form $y=a_0+a_1x$ (find $a_0$ and $a_1$).  You
+can use Sage or other software to compute $\hat Q$ and $\hat R$ (in
+Sage, compute the full QR decomposition and then delete the necessary
+rows and columns to get a reduced QR decomposition).
 
 </div>
