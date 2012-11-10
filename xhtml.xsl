@@ -28,6 +28,14 @@ exclude-result-prefixes="x">
   <xsl:apply-templates select="./x:code/node()"/>
 </xsl:template>
 
+<xsl:template match="x:octavecell">
+  <div class="aoctavecell"><xsl:apply-templates/></div>
+</xsl:template>
+
+<xsl:template match="x:ocatvecell/x:pre">
+  <xsl:apply-templates select="./x:code/node()"/>
+</xsl:template>
+
 <xsl:template match="x:frontmatter">
   <div class="frontmatter"><xsl:apply-templates/></div>
 </xsl:template>

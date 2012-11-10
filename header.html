@@ -11,6 +11,8 @@ $(function () {
 setTimeout(function() {
 sagecell.loadMathJax=false;
 sagecell.makeSagecell({inputLocation: '.asagecell'});
+sagecell.makeSagecell({inputLocation: '.aoctavecell',
+defaultLanguage: "octave", languages: sagecell.allLanguages});
 }, 1000);
 
 //console.log(MathJax);
