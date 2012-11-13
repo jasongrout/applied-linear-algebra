@@ -141,3 +141,21 @@ Sage, compute the full QR decomposition and then delete the necessary
 rows and columns to get a reduced QR decomposition).
 
 </div>
+
+
+Lecture 12: Conditioning and Condition numbers
+==============================================
+
+<div class="exercise">
+
+Show that if $A$ is square and nonsingular, then
+$$\frac{\norm{x}}{\norm{Ax}}\leq \norm{A^{-1}}.$$
+
+</div>
+
+<div class="exercise">
+
+Show that if $A\in \mathbb{C}^{m\times m}$ is nonsingular and has
+smallest singular value $\sigma_m$, then $\norm{A^{-1}}_2=1/\sigma_m$.
+
+</div>
